@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".homeStructure.ui.appointment.CallFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/home_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/header"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:text="Book appointment"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/about_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="Book a video/audio appointment"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text" />
+
+        <Spinner
+            android:id="@+id/patient_name_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borders"
+            android:minHeight="50dp"
+            app:layout_constraintTop_toBottomOf="@id/home_header" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/patient_age"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginTop="10dp"
+            android:hint="Enter your age"
+            android:textColorHint="@color/half_black"
+            android:visibility="gone"
+            app:boxStrokeColor="@color/base_theme"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconTint="@color/grey"
+            app:hintTextColor="@color/half_black"
+            app:layout_constraintTop_toBottomOf="@id/patient_name_spinner">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/patient_age_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:digits="0123456789"
+                android:editable="false"
+                android:fontFamily="@font/sfprof_regular"
+                android:inputType="number"
+                android:textColor="@color/charcoal"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/dobCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/datebtnc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/patient_name_spinner">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/datel"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toStartOf="@+id/datebtnc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patient_name_spinner">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateTextc"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Appointment Date"
+                    android:inputType="text" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dateText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Appointment Date"
+                android:inputType="text"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/datebtnc"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/base_theme"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:text="Pick a Date"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/dobCard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dobCard" />
+
+        <LinearLayout
+            android:id="@+id/timecard"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/timebtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dobCard">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/time_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/timeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Appointment Time"
+                    android:inputType="text"
+                    android:textColor="@color/black"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/timeText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Appointment Time"
+                android:inputType="text"
+                android:visibility="gone"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timeNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:textSize="11sp"
+            android:visibility="gone"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="*Please select appointment time between:\n 3PM to 6PM or 9PM to 12AM"
+            android:textColor="#ff0000"
+            app:layout_constraintTop_toBottomOf="@id/timecard" />
+
+        <ImageButton
+            android:id="@+id/timebtn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/base_theme"
+            android:src="@drawable/ic_baseline_access_time_24"
+            android:text="Pick a Time"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timecard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/timecard" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_box"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginTop="10dp"
+            android:hint="Date- YYYY-MM-DD"
+            android:textColorHint="@color/half_black"
+            android:visibility="gone"
+            app:boxStrokeColor="@color/base_theme"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/grey"
+            app:hintTextColor="@color/half_black"
+            app:layout_constraintTop_toBottomOf="@id/timeNote">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/date_get_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sfprof_regular"
+                android:inputType="textMultiLine"
+                android:textColor="@color/charcoal"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/time_box"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:layout_marginTop="10dp"
+            android:hint="Time- HH:mm:ss"
+            android:textColorHint="@color/half_black"
+            android:visibility="gone"
+            app:boxStrokeColor="@color/base_theme"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/grey"
+            app:hintTextColor="@color/half_black"
+            app:layout_constraintTop_toBottomOf="@id/date_box">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/time_get_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sfprof_regular"
+                android:inputType="textMultiLine"
+                android:textColor="@color/charcoal"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/patient_symptoms"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="10dp"
+            android:hint="What are you seeking care for?"
+            android:textColorHint="@color/half_black"
+            app:boxStrokeColor="@color/base_theme"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/grey"
+            app:hintTextColor="@color/half_black"
+            app:layout_constraintTop_toBottomOf="@id/timeNote">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/patient_symptoms_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sfprof_regular"
+                android:inputType="textMultiLine"
+                android:textColor="@color/charcoal"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/fees"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="Consultation charges: "
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/patient_symptoms" />
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:textSize="11sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="*Appointment is subject to availability of the doctor. In case the doctor is unavailable due to some uncertain emergency in his hospital, the appointment will be rescheduled for the next available date and time slot."
+            android:textColor="#ff0000"
+            app:layout_constraintTop_toBottomOf="@id/fees" />
+
+        <TextView
+            android:id="@+id/noteCall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:textSize="11sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="THE DOCTOR WILL CALL YOU AT THE SELECTED TIME"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/note" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/noteCall">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I Understand"
+                android:fontFamily="@font/sfprof_regular"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:buttonTint="@color/purple"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/pay_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:text="Book &amp; Pay Now*"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/consCheck" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    app:endIconMode="clear_text"-->
+</ScrollView>

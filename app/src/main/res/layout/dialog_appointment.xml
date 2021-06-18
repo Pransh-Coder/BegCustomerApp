@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/closebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginRight="7dp"
+        android:src="@drawable/close" />
+
+        <TextView
+            android:id="@+id/upcoming_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:visibility="gone"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="Upcoming Appointment"
+            android:textColor="@color/grey"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/upcoming_appointment_recycler"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="25dp"
+            android:visibility="visible"
+            android:layout_marginEnd="5dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/book_appointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="start"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="Book Appointment"
+            android:textColor="@color/grey"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/video_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/appointment_card"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/vid_logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/appointment_card"
+                android:backgroundTint="#f9f9f9"
+                android:padding="10dp"
+                android:src="@drawable/video"
+                app:tint="@color/red_logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/min_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="15 Minutes minimum"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/video_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="Video Call"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+<!--
+            <ImageView
+                android:id="@+id/vid"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/video1"
+                app:tint="@color/pale" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/video_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Fee Amount : Rs. 1000"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sfprof_regular"
+            android:textSize="15sp"/>
+
+
+
+    </LinearLayout>
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="10dp">-->
+<!--            -->
+<!--            -->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Fee Amount : Rs. 1000"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="@font/poppins_medium"-->
+<!--                android:textSize="20sp"/>-->
+<!--            -->
+<!--            -->
+<!--            -->
+<!--            -->
+<!--        </LinearLayout>-->
+<!--            -->
+
+    <LinearLayout
+        android:id="@+id/linearAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/audio_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/appointment_card"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/aud_logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/appointment_card"
+                android:backgroundTint="#f9f9f9"
+                android:padding="10dp"
+                android:src="@drawable/phone"
+                app:tint="@color/green_logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/min_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="15 Minutes minimum"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/audio_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="Audio Call"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+<!--            <ImageView
+                android:id="@+id/aud"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/phone"
+                app:tint="@color/pale" />-->
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/audio_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Fee Amount : Rs. 700"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sfprof_regular"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/person_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/appointment_card"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/per_logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/appointment_card"
+                android:backgroundTint="#f9f9f9"
+                android:padding="10dp"
+                android:src="@drawable/users"
+                app:tint="@color/blue_logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/min_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="15 Minutes minimum"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/person_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="OPD"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+<!--            <ImageView
+                android:id="@+id/per"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/users"
+                app:tint="@color/pale" />-->
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/opd_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Fee will be charged on visit"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sfprof_regular"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <!--<Button
+            android:id="@+id/detailsbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
+            android:text="View Details" />-->
+
+        <android.widget.Button
+            android:id="@+id/continuebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/curve_button"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="CONTINUE" />
+
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

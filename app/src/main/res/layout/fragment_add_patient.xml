@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".homeStructure.ui.user.AddPatientFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/header"
+            android:scaleType="fitXY"
+            android:id="@+id/home_header"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="25dp"
+            android:text="Add Patient"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:id="@+id/name_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text"
+            android:layout_marginStart="25dp"
+            android:text="Add a new patient"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:alpha="0.8"
+            android:id="@+id/about_text"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/txtUsername"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/home_header"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:hint="First Name"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/txtLastName"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsername"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enterLastName"
+                android:hint="Last Name"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/dobCard"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="25dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:cardCornerRadius="@dimen/_5sdp"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/dobbtnc"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtLastName">-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dob_item"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                app:layout_constraintTop_toBottomOf="@id/txtLastName"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/dobbtnc"
+
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dobTextc"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Date of Birth"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/dobText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:visibility="invisible"-->
+<!--                android:hint="Date of Birth"-->
+<!--                android:inputType="text" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+        <ImageButton
+            android:id="@+id/dobbtnc"
+            android:layout_width="55dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/gradient_one"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:text="Pick a Date"
+            android:textSize="17sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/dob_item"
+            app:layout_constraintTop_toTopOf="@+id/dob_item" />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/txtMothersName"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/dob_item"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enterMothersName"
+                android:hint="Mother's Name"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/genderCons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtMothersName">
+
+            <Spinner
+                android:id="@+id/gender_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:minHeight="45dp"
+                android:entries="@array/gender_list"
+                android:background="@drawable/borders"
+                android:layout_weight="0.5"
+                android:textSize="17sp"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <android.widget.Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Details"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/curve_button"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/genderCons"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

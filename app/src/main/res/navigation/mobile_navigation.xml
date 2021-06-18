@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_callFragment"
+            app:destination="@id/callFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_personFragment"
+            app:destination="@id/personFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_consultationFragment"
+            app:destination="@id/consultationFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_addPatientFragment"
+            app:destination="@id/addPatientFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.user.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+
+        <action
+            android:id="@+id/action_navigation_user_to_accountSettingsFragment"
+            app:destination="@id/accountSettingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_videos"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.videos.VideosFragment"
+        android:label="@string/video"
+        tools:layout="@layout/fragment_videos" >
+        <action
+            android:id="@+id/action_navigation_videos_to_article_details2"
+            app:destination="@id/article_details2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_info"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.info.InfoFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/navigation_stats"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.stats.StatsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_stats" />
+    <fragment
+        android:id="@+id/consultationFragment"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.user.ConsultationFragment"
+        android:label="fragment_consultation"
+        tools:layout="@layout/fragment_consultation" >
+        <action
+            android:id="@+id/action_consultationFragment_to_consultation_details"
+            app:destination="@id/consultation_details" />
+        <action
+            android:id="@+id/action_consultationFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/callFragment"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.appointment.CallFragment"
+        android:label="fragment_call"
+        tools:layout="@layout/fragment_call"
+
+        >
+        <action
+            android:id="@+id/action_callFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.appointment.PersonFragment"
+        android:label="fragment_person"
+        tools:layout="@layout/fragment_person" />
+    <fragment
+        android:id="@+id/consultation_details"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.home.consultation_details"
+        android:label="fragment_consultation_details"
+        tools:layout="@layout/fragment_consultation_details" />
+    <fragment
+        android:id="@+id/article_details2"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.home.article_details"
+        android:label="fragment_article_details"
+        tools:layout="@layout/fragment_article_details" />
+    <fragment
+        android:id="@+id/accountSettingsFragment"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.user.AccountSettingsFragment"
+        android:label="fragment_account_settings"
+        tools:layout="@layout/fragment_account_settings" >
+        <action
+            android:id="@+id/action_accountSettingsFragment_to_addPatientFragment"
+            app:destination="@id/addPatientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPatientFragment"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.user.AddPatientFragment"
+        android:label="fragment_add_patient"
+        tools:layout="@layout/fragment_add_patient" >
+        <action
+            android:id="@+id/action_addPatientFragment_to_accountSettingsFragment"
+            app:destination="@id/accountSettingsFragment" />
+        <action
+            android:id="@+id/action_addPatientFragment_to_questionnaireFragment"
+            app:destination="@id/questionnaireFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.customer.drbegcustomer.entryStructure.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.customer.drbegcustomer.paymentGateway.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/questionnaireFragment"
+        android:name="com.customer.drbegcustomer.homeStructure.ui.user.QuestionnaireFragment"
+        android:label="fragment_questionnaire"
+        tools:layout="@layout/fragment_questionnaire" />
+</navigation>

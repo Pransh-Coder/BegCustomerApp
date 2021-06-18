@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/header2"
+            android:scaleType="fitXY"
+            android:id="@+id/home_header"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="25dp"
+            android:text="Body Mass Index"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:id="@+id/name_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text"
+            android:layout_marginStart="25dp"
+            android:text="Calculate your BMI"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:alpha="0.8"
+            android:id="@+id/about_text"/>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/bmi_text"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="17dp"-->
+<!--            android:layout_marginStart="25dp"-->
+<!--            android:text="BMI"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="@font/poppins_bold"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/home_header"/>-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintTop_toBottomOf="@id/home_header"
+            android:layout_marginTop="17dp"
+            app:cardCornerRadius="3dp"
+            android:id="@+id/searchCard">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:hintTextColor="@color/base_theme"
+                    android:id="@+id/age_design"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_age"
+                        android:textAllCaps="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:hintTextColor="@color/base_theme"
+                    android:id="@+id/weight_design"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/age_design">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_weight"
+                        android:textAllCaps="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:hintTextColor="@color/base_theme"
+                    android:id="@+id/height_design"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weight_design">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/input_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_height"
+                        android:textAllCaps="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="@string/bmi"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/height_design" />
+
+                <Button
+                    android:id="@+id/calculate_bmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/calculate"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    app:layout_constraintTop_toBottomOf="@+id/height_design" />
+
+                <TextView
+                    android:id="@+id/weight_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/kg_m2"
+                    android:textSize="15sp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/poppins_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/height_design" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="54dp"
+                    android:layout_marginEnd="54dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calculate_bmi">
+
+                    <pl.pawelkleczkowski.customgauge.CustomGauge
+                        android:id="@+id/gauge"
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_centerHorizontal="true"
+                        app:gaugeEndValue="40"
+                        app:gaugePointEndColor="@color/purple_400"
+                        app:gaugePointStartColor="@color/purple_400"
+                        app:gaugeStartAngle="145"
+                        app:gaugeStartValue="16"
+                        app:gaugeStrokeCap="ROUND"
+                        app:gaugeStrokeColor="@color/light"
+                        app:gaugeStrokeWidth="15dp"
+                        app:gaugeSweepAngle="250" />
+                    <ImageView
+                        android:id="@+id/health_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignBottom="@+id/bmi_value"
+                        android:src="@drawable/vector"
+                        android:layout_marginBottom="28dp"/>
+                    <TextView
+                        android:id="@+id/bmi_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:layout_alignBottom="@+id/gauge"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="40dp" />
+                </RelativeLayout>
+
+              <!--  <TextView
+                    android:id="@+id/condition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/sfprof_regular"
+                    android:text="@string/healthy"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_relative" />-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_relative">
+
+
+                    <TextView
+                        android:id="@+id/categoryTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/diffrenceTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Difference"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"/>
+
+
+                    <TextView
+                        android:id="@+id/category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Underweight"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="18sp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/categoryTxt"/>
+
+                    <TextView
+                        android:id="@+id/difference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 lb"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:textColor="@color/blue"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/diffrenceTxt"/>
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/darkGray"
+                        app:layout_constraintTop_toBottomOf="@id/difference"/>
+
+                    <TextView
+                        android:id="@+id/verySeverelyWeightTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Very Severely Underweight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/view1"/>
+
+                    <TextView
+                        android:id="@+id/verySeverelyWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:text="&lt;16"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view1"/>
+
+
+                    <TextView
+                        android:id="@+id/severelyWeightTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Severely Underweight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/verySeverelyWeight"/>
+
+                    <TextView
+                        android:id="@+id/severelyWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16.0-16.9"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/verySeverelyWeight"/>
+
+                    <TextView
+                        android:id="@+id/underWeightTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Underweight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/severelyWeightTxt"/>
+
+                    <TextView
+                        android:id="@+id/underWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="17.0-18.4"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/severelyWeight"/>
+
+
+                    <TextView
+                        android:id="@+id/normalTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/underWeightTxt"/>
+
+                    <TextView
+                        android:id="@+id/normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18.5-24.9"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/underWeight"/>
+
+
+                    <TextView
+                        android:id="@+id/overweightTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overweight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/normalTxt"/>
+
+                    <TextView
+                        android:id="@+id/overweight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25.0-29.9"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/normal"/>
+
+                    <TextView
+                        android:id="@+id/obeseClassITxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Obese Class I"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/overweightTxt"/>
+
+                    <TextView
+                        android:id="@+id/obeseClassI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30.0-34.9"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/overweight"/>
+
+                    <TextView
+                        android:id="@+id/obeseClassIITxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Obese Class II"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        app:layout_constraintTop_toBottomOf="@+id/obeseClassITxt"/>
+
+                    <TextView
+                        android:id="@+id/obeseClassII"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="35.0-39.9"
+                        android:textColor="@color/darkGray"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textSize="15sp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/obeseClassI"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".homeStructure.ui.user.DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/header4"
+            android:scaleType="fitXY"
+            android:id="@+id/home_header"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="25dp"
+            android:text="Dr. Beg's Child Care"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:id="@+id/name_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="25dp"
+            android:text="Healing Hands and Caring Hearts"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/sfprof_regular"
+            android:alpha="0.8"
+            android:id="@+id/about_text"/>
+
+<!--
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintTop_toBottomOf="@id/about_text"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="3dp"
+            android:id="@+id/searchCard">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/search"
+                android:hint="  Search"
+                android:id="@+id/searchText"
+                android:autofillHints="  Search"
+                android:layout_marginStart="24dp"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:textColorHint="#D2D2D2"
+                android:inputType="text" />
+
+        </androidx.cardview.widget.CardView>-->
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_account_settings_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:minHeight="50dp"
+            android:visibility="gone"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintTop_toBottomOf="@id/home_header"
+            android:layout_marginTop="21dp"
+            app:cardCornerRadius="3dp">
+            <ImageView
+                android:id="@+id/image_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="14dp"
+                android:src="@drawable/ic_user_plus_1"
+                android:layout_marginStart="25.5dp"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="81dp"
+               android:textSize="18dp"
+               android:fontFamily="@font/sfprof_regular"
+               android:layout_marginTop="13dp"
+                android:text="Account Settings"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_consultion_settings_option"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="25dp"
+            android:visibility="gone"
+            android:minHeight="50dp"
+            app:cardCornerRadius="3dp"
+            app:layout_constraintTop_toBottomOf="@id/card_account_settings_option"
+            tools:layout_editor_absoluteX="25dp">
+
+            <ImageView
+                android:id="@+id/image_consultation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25.5dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_user_plus_2" />
+
+            <TextView
+                android:id="@+id/consult_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="81dp"
+
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/sfprof_regular"
+                android:text="Consultation History"
+                android:textSize="18dp" />
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>

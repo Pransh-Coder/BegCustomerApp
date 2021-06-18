@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="75dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="15dp"
+   >
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardConsultation"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/blogTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/sfprof_regular"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:hint="Child Name"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp" />
+
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/sfprof_regular"
+                android:hint="Male/Female"
+                android:textColor="#444444"
+                android:textSize="11sp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blogTitle" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:hint="age"
+                android:fontFamily="@font/sfprof_regular"
+                android:textColor="#444444"
+                android:textSize="11sp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blogTitle" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="15dp"
+                android:id="@+id/info_layout"
+                android:layout_marginTop="15dp"
+                android:visibility="gone"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintTop_toBottomOf="@id/blogTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/profileImage"/>
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shivani Vora"
+                    app:layout_constraintStart_toEndOf="@id/profileImage"
+                    android:layout_marginStart="9dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="11sp"
+                    android:textColor="#444444"
+                    android:fontFamily="@font/sfprof_regular"
+                    />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2020 . 01 . 01"
+                    app:layout_constraintStart_toEndOf="@id/profileImage"
+                    android:layout_marginStart="9dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="9sp"
+                    android:textColor="#A1A8B9"
+                    android:fontFamily="@font/sfprof_regular"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@drawable/bookmark"
+                android:layout_marginEnd="25.3dp"
+                app:layout_constraintTop_toTopOf="@id/info_layout"
+                app:layout_constraintEnd_toStartOf="@id/like" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/like"
+                android:visibility="gone"
+                android:id="@+id/like"
+                android:layout_marginEnd="19dp"
+                app:layout_constraintTop_toTopOf="@id/info_layout"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

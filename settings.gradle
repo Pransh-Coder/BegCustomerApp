@@ -1,0 +1,2 @@
+rootProject.name = "BegCustomerApp"
+include ':app'

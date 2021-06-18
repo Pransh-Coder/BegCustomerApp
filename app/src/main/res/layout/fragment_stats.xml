@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    tools:context=".homeStructure.ui.stats.StatsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/option_layout"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/home_header"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/header2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/sfprof_regular"
+            android:textStyle="bold"
+            android:text="Growth Chart"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/about_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprof_regular"
+            android:text="Growth charts are a standard part of child's checkups"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginStart="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_text" />
+
+        <LinearLayout
+            android:id="@+id/first_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_header">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                app:cardUseCompatPadding="true"
+                android:id="@+id/height_layout">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/height_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_height_fab"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/red_logo" />
+
+                    <TextView
+                        android:id="@+id/height_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Height"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/height_img"
+                        app:layout_constraintStart_toStartOf="@+id/height_img"
+                        app:layout_constraintTop_toBottomOf="@id/height_img" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:text="This calculator provides infant length percentile based on age."
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/height_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/height_img"
+                        app:layout_constraintTop_toTopOf="@+id/height_img" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/weight_layout"
+                app:cardUseCompatPadding="true">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:text="This calculator provides your child's weight percentile based on age."
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/weight_text"
+                        app:layout_constraintEnd_toStartOf="@+id/weight_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/weight_img" />
+
+
+                <ImageView
+                    android:id="@+id/weight_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_weight_fab"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="15dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/green_logo" />
+
+                    <TextView
+                        android:id="@+id/weight_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:text="Weight"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/weight_img"
+                        app:layout_constraintStart_toStartOf="@+id/weight_img"
+                        app:layout_constraintTop_toBottomOf="@id/weight_img" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bmi_layout"
+
+                app:cardUseCompatPadding="true"
+
+                android:layout_weight="0.5">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/bmi_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_bmi_fab"
+                        android:layout_marginStart="15dp"
+
+                        app:tint="@color/blue_logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/bmi_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:text="BMI"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/bmi_img"
+
+                        app:layout_constraintStart_toStartOf="@+id/bmi_img"
+                        app:layout_constraintTop_toBottomOf="@id/bmi_img" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:text="Body Mass Index (BMI) is a person's weight in kilograms divided by the square of height in meters."
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/bmi_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/bmi_img"
+                        app:layout_constraintTop_toTopOf="@+id/bmi_img" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/head_layout"
+                app:cardUseCompatPadding="true"
+                android:layout_weight="0.5">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="This calculator provides your baby's head circumference percentile based on age."
+                        android:textAlignment="textEnd"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/head_text"
+                        app:layout_constraintEnd_toStartOf="@+id/head_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/head_img" />
+
+                    <ImageView
+                        android:id="@+id/head_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_head_fab"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="15dp"
+                        app:tint="#81E1FF"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/head_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sfprof_regular"
+                        android:text="Head"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@+id/head_img"
+                        app:layout_constraintStart_toStartOf="@+id/head_img"
+                        app:layout_constraintTop_toBottomOf="@id/head_img" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/frag_bmi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="phone"
+        android:visibility="gone">
+        <include layout="@layout/frag_bmi" />
+    </RelativeLayout>
+
+     <RelativeLayout
+        android:id="@+id/frag_weight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <include layout="@layout/fragment_weight_calculate" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/frag_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <include layout="@layout/fragment_height_calculate" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/frag_circumference"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <include layout="@layout/fragment_head_calculate" />
+    </RelativeLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="15dp"
+        app:fab_addButtonSize="normal"
+        android:id="@+id/fab_menu"
+        android:visibility="gone"
+        fab:fab_addButtonColorNormal="@color/purple_400"
+        app:fab_labelStyle="@style/custom_floating_button"
+        tools:ignore="MissingClass">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:id="@+id/fab_circumference"
+            android:scaleType="centerInside"
+            app:fab_title="Head Circumference"
+            android:src="@drawable/ic_head_fab"
+            app:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:id="@+id/fab_weight"
+            android:src="@drawable/ic_weight_fab"
+            app:fab_title="Weight"
+            android:scaleType="centerInside"
+            app:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:id="@+id/fab_height"
+            app:fab_title="Height"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_height_fab"
+            app:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_size="mini"
+            android:src="@drawable/ic_bmi_fab"
+            android:id="@+id/fab_bmi"
+            app:fab_title="BMI"
+            android:scaleType="centerInside"
+            app:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
